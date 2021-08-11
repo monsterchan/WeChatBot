@@ -15,6 +15,11 @@ limitations under the License.
 """
 import os
 import asyncio
+import requests
+import json
+import numpy as np
+import cv2
+import base64
 
 from wechaty import (
     Contact,
@@ -23,12 +28,21 @@ from wechaty import (
     Wechaty,
     ScanStatus,
 )
+os.environ["WECHATY_PUPPET"] = 'wechaty-puppet-service'
+os.environ["WECHATY_PUPPET_SERVICE_TOKEN"] = 'puppet_padlocal_6c909d60a7444eeaa106e044de0a6026'
+
+# 接收发来的图片，存储到images
+def imgSave():
+    img_path = r'./images/'
+
+
 
 
 async def on_message(msg: Message):
     """
     Message Handler for the Bot
     """
+
     if msg.text() == 'ding':
         await msg.say('dong')
 

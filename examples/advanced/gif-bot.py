@@ -1,5 +1,9 @@
 """doc"""
 # pylint: disable=R0801
+import os
+os.environ["WECHATY_PUPPET"] = 'wechaty-puppet-service'
+os.environ["WECHATY_PUPPET_SERVICE_TOKEN"] = 'puppet_padlocal_6c909d60a7444eeaa106e044de0a6026'
+
 import asyncio
 import logging
 from typing import Optional, Union
